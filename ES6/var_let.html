@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+		<script type="text/babel">
+			
+		// 3 escopos: global, função e bloco
+
+		var serie = 'Friends'
+
+		function x(){
+
+			var serie = 'Game Of Thrones'
+			console.log('função ' + serie)
+
+			if(true){
+				console.log('bloco dentro da função ' + serie)
+			}
+		}
+
+		x()
+
+		if (true) {
+			//console.log('global ' + serie)
+			var serie = 'The Walking Dead'
+			console.log(serie)
+
+		}
+
+
+		</script>
+
+	</head>
+	<body>
+
+		<div id="output"></div>
+
+	</body>
+</html>
