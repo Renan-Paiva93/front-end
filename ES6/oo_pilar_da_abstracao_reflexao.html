@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title></title>
-		<meta charset="utf-8">
 
 		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
@@ -11,30 +10,38 @@
 		// um software de marcenaria
 		// cadeira e sofá
 
-		//paradigma procedura
+		//paradigma de OO
 
-		//cadeira 
+		class Cadeira {
 
-		let qtde_pernas = 4
-		let giratoria = false
-		let cor = 'azul'
+			constructor(qtde_pernas, giratoria, cor){
+				this.qtde_pernas = qtde_pernas
+				this.giratoria = giratoria
+				this.cor = cor
+			}
 
-		function girar_cadeira() {
-			if (giratoria === true) {
-				console.log('girou')
-			} else{
-				console.log('cadeira não é giratoria')
+			girarCadeira(){
+				if(this.giratoria === true){
+					console.log('girou')
+				}else{
+					console.log('cadeira não é giratoria')
+				}
 			}
 		}
 
-		girar_cadeira()
+		let cadeiras = Array()
+		
+
+		cadeiras.push(new Cadeira(4, false, 'azul'))
+		cadeiras.push(new Cadeira(1, true, 'verde'))
+
+		console.log(cadeiras)
+		
 
 		</script>
 
 	</head>
 	<body>
-
 		<div id="output"></div>
-
 	</body>
 </html>
