@@ -13,6 +13,7 @@
 			constructor(){
 				this.cor = ''
 				this.tamanho = null
+				this.peso = null
 			}
 
 			//novo métodos
@@ -56,12 +57,37 @@
 			}
 		}
 
+		// NOVA CLASSE
+		class Papagaio extends Passaro {
+			constructor() {
+				super() 
+				this.sabeFalar = true
+			}
+
+			// médoto
+			falar(){
+				console.log('Falar')
+			}
+		}
+
 		// Criação da estancia
 		let cachorro = new Cachorro() 
 		let passaro = new Passaro()
+		let papagaio = new Papagaio()
 
+		/*
 		cachorro.dormir()
 		passaro.dormir()
+		papagaio.falar()
+		papagaio.dormir()
+		papagaio.voar()
+		*/
+
+		console.log(cachorro)
+		console.log(passaro)
+		console.log(papagaio)
+
+
 
 		</script>
 
