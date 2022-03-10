@@ -6,23 +6,34 @@
 		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 		<script type="text/babel">
+
+
+		// CLASSE PAI
+		class Animal {
+			constructor(){
+				this.cor = ''
+				this.tamanho = null
+			}
+
+			//novo métodos
+			dormir(){
+				console.log('Dormir')
+			}
+		}
+
 			
 		// Classe que representa objeto CACHORRO
-		class Cachorro {
+		class Cachorro extends Animal{
 			constructor(){
+				super()
+				
 				//atributos/caracteriscas - descrição do objetos
-				this.cor = 'Branco e marrom'
-				this.tamanho = 30
 				this.orelhas = 'Grandes'
 			} 
 
 			//Métodos - AÇÕES
 			correr(){
 				console.log('Correr')
-			}
-
-			dormir(){
-				console.log('Dormir')
 			}
 
 			rosnar(){
@@ -32,21 +43,16 @@
 
 
 		// Classe que representa objeto PASSARO
-		class Passaro {
+		class Passaro extends Animal{ // criação do objeto que herda da classe animal
 			constructor(){
+				super()
 				//atributos/caracteriscas - descrição do objetos
-				this.cor = 'Branco e marrom'
-				this.tamanho = 10
 				this.orelhas = 'curto'
 			} 
 
 			//Métodos - AÇÕES
 			voar(){
 				console.log('Voar')
-			}
-
-			dormir(){
-				console.log('Dormir')
 			}
 		}
 
