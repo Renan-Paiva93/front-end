@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+		<script type="text/babel">
+
+
+		// SEMPRE ATIVAR NO VIEW
+
+		// CLASSE PAI
+		class Animal {
+			constructor(cor, tamanho, peso){
+				this.cor = cor
+				this.tamanho = tamanho
+				this.peso = peso
+			}
+
+			//novo métodos
+			dormir(){
+				console.log('Dormir')
+			}
+		}
+
+
+		// Classe que representa objeto PASSARO
+		class Passaro extends Animal{ // criação do objeto que herda da classe animal
+			constructor(bico, cor, tamanho, peso){
+				super(cor, tamanho, peso)
+				//atributos/caracteriscas - descrição do objetos
+				this.bico = bico
+			} 
+
+			//Métodos - AÇÕES
+			voar(){
+				console.log('Voar')
+			}
+		}
+
+		// NOVA CLASSE
+		class Papagaio extends Passaro {
+			constructor(sabeFalar, cor, tamanho, peso) {
+				super('Médio', cor, tamanho, peso) 
+				this.sabeFalar = sabeFalar
+			}
+
+			// médoto
+			falar(){
+				console.log('Falar')
+			}
+		}
+
+		let papagaio = new Papagaio(true, 'verde', 25, 350) // parametros para construtor
+		console.log(papagaio)
+
+		let papagaio2 = new Papagaio(false, 'branco', 10, 80) // parametros para construtor
+		console.log(papagaio2)
+
+		</script>
+
+	</head>
+	<body>
+
+		<div id="output"></div>
+
+	</body>
+</html>
