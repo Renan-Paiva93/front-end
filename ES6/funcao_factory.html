@@ -7,9 +7,9 @@
 
 		<script type="text/babel">
 
-		// requisião http
+		// requisicão http
 		// resposta http
-		
+
 		let Bicicleta1 = {
 			cor: 'Branca',
 			marcha: 'única',
@@ -28,6 +28,30 @@
 
 		console.log(Bicicleta1)
 		console.log(Bicicleta2)
+
+		//---------------------------------------------------------
+
+		let BicicletaFactory = function(cor, marcha, aro, tipoPedal) { // parametros 
+			//lógica
+			// requisicão http
+			// resposta htt
+			return {
+				cor,
+				marcha,
+				aro, // criação do objeto
+				tipoPedal, // criação do objeto
+				pedalar() {console.log('método pedalar executado')}
+			}
+		}
+
+		let Bicicleta3 = BicicletaFactory('vermelha', '18', 26)
+		console.log(Bicicleta3)
+
+		let Bicicleta4 = BicicletaFactory('Preta', '21', 29)
+		console.log(Bicicleta4)
+
+		//console.log(`Cor: ${Bicicleta3.cor}`) 
+		//Bicicleta3.pedalar
 
 
 		</script>
