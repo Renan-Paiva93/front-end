@@ -1,8 +1,8 @@
 class Despesa {
 	constructor(ano, mes, dia, tipo, descricao, valor) {
-		this. ano = ano
+		this.ano = ano
 		this.mes = mes
-		this.dia = dia 
+		this.dia = dia
 		this.tipo = tipo
 		this.descricao = descricao
 		this.valor = valor
@@ -10,7 +10,7 @@ class Despesa {
 
 	validarDados() {
 		for(let i in this) {
-			if(this[i] == undefined || this[i] || '' || this[i] == null) {
+			if(this[i] == undefined || this[i] == '' || this[i] == null) {
 				return false
 			}
 		}
@@ -18,25 +18,25 @@ class Despesa {
 	}
 }
 
-class Bd { // responsável por controlar a situação
+class Bd {
 
 	constructor() {
-			let id = localStorage.getItem('id')
+		let id = localStorage.getItem('id')
 
-			if(id === null) {
-				localStorage.setItem('id', 0)
-			}
+		if(id === null) {
+			localStorage.setItem('id', 0)
 		}
+	}
 
 	getProximoId() {
-		let getProximoId = localStorage.getItem('id') 
-		return parseInt(getProximoId)  + 1
+		let proximoId = localStorage.getItem('id')
+		return parseInt(proximoId) + 1
 	}
 
 	gravar(d) {
 		let id = this.getProximoId()
 
-		localStorage.setItem('despesa', JSON.stringify(d))
+		localStorage.setItem(id, JSON.stringify(d))
 
 		localStorage.setItem('id', id)
 	}
@@ -54,25 +54,35 @@ function cadastrarDespesa() {
 	let descricao = document.getElementById('descricao')
 	let valor = document.getElementById('valor')
 
-	console.log()
-	
 	let despesa = new Despesa(
-		ano.value,
-		mes.value,
-		dia.value,
-		tipo.value,
+		ano.value, 
+		mes.value, 
+		dia.value, 
+		tipo.value, 
 		descricao.value,
 		valor.value
-		)
-
+	)
+	
 	if(despesa.validarDados()) {
 		//bd.gravar(despesa)
-		//dialog de sucesso
-		console.log('Dados válidos')
-	} else {
-		// dialog de erro
-		console.log('Dados inválidos')
-	}
-	
-}
 
+		document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso'
+		document.getElementById('modal_titulo_div').className = 'modal-header text-success'
+		document.getElementById('modal_conteudo').innerHTML = 'Despesa foi cadastrada com sucesso'
+		document.getElementById('modal_btn').innerHTML = 'Voltar'
+		document.getElementById('modal_btn').className = 'btn btn-success'
+
+		//dialog de sucesso
+		$('#modalRegistraDespesa').modal('show') 
+	} else {
+		
+		document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro'
+		document.getElementById('modal_titulo_div').className ='modal-header text-danger'
+		document.getElementById('modal_conteudo').innerHTML = 'Erro na gravação, verifique se todos os campos foram preeenchidos corretamente.'
+		document.getElementById('modal_btn').innerHTML = 'Voltar e corrigir'
+		document.getElementById('modal_btn').className = 'btn btn-danger'
+
+		//dialog de sucesso
+		$('#modalRegistraDespesa').modal('show') 
+	}
+}
