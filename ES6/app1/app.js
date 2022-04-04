@@ -40,6 +40,19 @@ class Bd {
 
 		localStorage.setItem('id', id)
 	}
+
+	recuperarTodosRegistros() {
+		let id = localStorage.getItem('id')
+
+		//recupera todos as despesas cadastradas em localStorage
+		for(let i = 1; i <= id; i++) {
+
+			//recuperar a despesa
+			let despesa = localStorage.getItem(i)
+
+			console.log(despesa)
+		}
+	}
 }
 
 let bd = new Bd()
@@ -86,3 +99,9 @@ function cadastrarDespesa() {
 		$('#modalRegistraDespesa').modal('show') 
 	}
 }
+
+
+function carregaListaDespesas() {
+	bd.recuperarTodosRegistros()
+
+} 
