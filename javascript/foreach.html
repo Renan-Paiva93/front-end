@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+  <script>
+
+    //var listaFuncionarios = ['Viviane', 'Rosângela', 'Michel', 'Lucas', 'Fernanda']
+
+    var listaFuncionarios = Array()
+
+    listaFuncionarios['x'] = 'Viviane'
+    listaFuncionarios['false'] = 'Rosângela'
+    listaFuncionarios['3'] = 'Miguel'
+    listaFuncionarios['27'] = 'Lucas'
+    listaFuncionarios['-12'] = 'Fernanda'
+
+    var f = function(valor, indice){
+      console.log(valor, indice)
+    }
+
+    listaFuncionarios.forEach(f)
+
+    /*
+    console.log(listaFuncionarios)
+    document.write(listaFuncionarios[3])
+
+    listaFuncionarios.forEach(function(valor, indice, array){
+      // lógica 
+      console.log('indice ' + indice + ' | valor: ' + valor)
+      console.log(array)
+
+      if(valor == 'Lucas'){
+        array[indice] = 'um novo valor'
+      }
+    })
+
+    console.log(listaFuncionarios)
+    document.write('<br />' + listaFuncionarios[3])
+    */    
+
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
